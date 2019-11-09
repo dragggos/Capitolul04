@@ -19,7 +19,6 @@ int main()
       cout<<"Introduceti tipul(1-mere, 2-banane, 3-kiwi, 4-nuci):";
       cin>>n;
       tabl[i].tipProdus=static_cast<Tip>(n);
-      cout<<tabl[i].tipProdus;
       cout<<"Introduceti cantitatea:";
       cin>>tabl[i].cantitate;
       cout<<"Introduceti pretul:";
@@ -28,7 +27,14 @@ int main()
   cout<<"Produs"<<"  "<<"Cant"<<"  "<<"Pret"<<endl;
   for(int i=0;i<3;i++)
   {
-      cout<<tabl[i].tipProdus<<"  "<<tabl[i].cantitate<<"  "<<tabl[i].pret<<endl;
+      switch(tabl[i].tipProdus)
+      {
+      case 1: cout<<"mere  "<<"  "<<tabl[i].cantitate<<"  "<<tabl[i].pret<<endl; break;
+      case 2: cout<<"banane"<<"  "<<tabl[i].cantitate<<"  "<<tabl[i].pret<<endl; break;
+      case 3: cout<<"kiwi  "<<"  "<<tabl[i].cantitate<<"  "<<tabl[i].pret<<endl; break;
+      case 4: cout<<"nuci  "<<"  "<<tabl[i].cantitate<<"  "<<tabl[i].pret<<endl; break;
+      default: cout<<"Nu avem aceste fructe in stoc!"<<endl;
+      }
       stoc=stoc+tabl[i].cantitate*tabl[i].pret;
   }
   cout<<"Valoarea stocului este:"<<stoc<<endl;
